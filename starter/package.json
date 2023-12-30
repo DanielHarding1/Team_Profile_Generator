@@ -16,6 +16,6 @@
   "author": "Daniel Harding",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.12"
+    "inquirer": "^6.5.2"
   }
 }

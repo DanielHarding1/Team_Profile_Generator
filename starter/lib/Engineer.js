@@ -4,7 +4,7 @@ const Employee = require("./Employee");
 
 class Engineer extends Employee {
   //Use New constructor and Super is used in reference to the parent class, calls all the parents constructor methods and properties
-  constructor(github) {
+  constructor(name, id, email, github) {
     super(name, id, email);
     this.github = github;
   }
