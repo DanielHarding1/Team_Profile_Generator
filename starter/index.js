@@ -81,7 +81,11 @@ function Menu() {
         console.log("Moving to adding an Intern!");
         askforInternInfo();
       } else if (response.options === "Finish Building the Team") {
-        render(EmployeeArray);
+        render(EmployeeArray).then((data) => {
+          fs.writeFile(outputPath, data, (err) => {
+            err ? console.log(err) : console.log("Response Appended");
+          });
+        });
       }
     });
 }
@@ -169,10 +173,5 @@ function askforInternInfo() {
       Menu();
     });
 }
-
-// const dataWrite = pageTemplate(data);
-// fs.writeFile(outputPath, dataWrite, (err) => {
-//   err ? console.log(err) : console.log("Response Appended");
-// });
 
 aksforManagerInfo();
