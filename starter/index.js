@@ -81,13 +81,17 @@ function Menu() {
         console.log("Moving to adding an Intern!");
         askforInternInfo();
       } else if (response.options === "Finish Building the Team") {
-        render(EmployeeArray).then((data) => {
-          fs.writeFile(outputPath, data, (err) => {
-            err ? console.log(err) : console.log("Response Appended");
-          });
-        });
+        WriteFile();
       }
     });
+}
+
+function WriteFile() {
+  console.log(EmployeeArray);
+  const data = render(EmployeeArray);
+  fs.writeFile(outputPath, data, (err) => {
+    err ? console.log(err) : console.log("Response Appended");
+  });
 }
 
 function askforEngineerInfo() {

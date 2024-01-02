@@ -9,6 +9,10 @@ class Intern extends Employee {
     this.school = school;
   }
 
+  getSchool() {
+    return this.school;
+  }
+
   getGithub() {
     return this.github;
   }
