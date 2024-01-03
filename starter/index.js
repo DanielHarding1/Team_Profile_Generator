@@ -39,7 +39,7 @@ function aksforManagerInfo() {
       },
       {
         type: "input",
-        name: "officenumber",
+        name: "officeNumber",
         message: "Please Enter the Team Mangers Office Number",
         validate: (val) => /[1-9]/gi.test(val),
       },
@@ -49,7 +49,7 @@ function aksforManagerInfo() {
         data.name,
         data.id,
         data.email,
-        data.officenumber
+        data.officeNumber
       );
 
       console.log(createManager);
@@ -87,7 +87,6 @@ function Menu() {
 }
 
 function WriteFile() {
-  console.log(EmployeeArray);
   const data = render(EmployeeArray);
   fs.writeFile(outputPath, data, (err) => {
     err ? console.log(err) : console.log("Response Appended");
